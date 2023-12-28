@@ -539,6 +539,25 @@
                    }
                 }
               }
+              .checkbox-input-box{
+                display: flex;
+
+                .input-checkbox{
+                  height: 20px;
+                  width: 20px;
+                  margin: 0;
+                  padding-left: 10px;
+                  cursor: pointer;
+                  appearance: auto;
+                }
+                label{
+                  margin-top: 1%;
+                  margin-left: 3%;
+                  span{
+                    color: var(--color-green);
+                  }
+                }
+              }
               .input-boxes{
                 width: 100%;
                  position: relative;
@@ -587,7 +606,46 @@
                   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
                   transition-duration: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
                  }
+                 .error-box{
+                  color: red;
+                  font-size: var(--text-mini);
+                  font-family: var(--font-helvicta-light);
+                  margin-top: 5px;
+                 }
+                 .green-btn{
+                  background-color: var(--color-grey-1);
+                  transition: all 500ms ease;
+                  transition-property: height, background, box-shadow;
+                  p{
+                    color: black;
+                    transition: all 500ms ease;
+                    transition-property: height, background, box-shadow;
+                  }
+                  &:hover{
+                    background-color: var(--color-grey);
+                    p{
+                      color: white;
+                    }
+                  }
+                  
+                 }
               }
+              .error-box{
+                color: red;
+                font-size: var(--text-mini);
+                font-family: var(--font-helvicta-light);
+                margin-top: 5px;
+               }
+              .book-meeting-btn{
+                margin-top: 10px;
+                .green-btn{
+                  background-color: var(--color-grey);
+                  p{
+                    color: white;
+                  }
+                 }
+              }
+              
             }
           }
           .bottom-section{
