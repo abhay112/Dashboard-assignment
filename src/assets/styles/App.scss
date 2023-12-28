@@ -1,0 +1,160 @@
+@import "./common.scss";
+.dashboard-layout{
+  .db-main{
+    display: flex;
+    justify-content: space-between;
+    .db-nav-menu{
+      width: 20%;
+      height: 100vh;
+      background-color: rgb(255, 255, 255);
+      .nav-menu-item{
+        margin-top: 30%;
+        padding: var(--green-btn-padding);
+        h2{
+          font-family: var(--font-helvicta-bold);
+          background-color: var(--color-grey-1);
+          font-size: var(--text-sm);
+          padding: var(--green-btn-padding);
+          padding-left: 60px;
+          transition: 0.3s;
+          border-radius: var(--green-btn-padding);
+          &:hover{
+            background-color: var(--color-grey-1-hover);
+            border-radius: var(--green-btn-padding);
+            cursor: pointer;
+          }
+        }
+
+      }
+    }
+    .db-content{
+      width: 80%;
+      background-color: var(--color-white);
+      .dashboard-cmp{
+        .header{
+          background-color:  var(--color-white);
+          width: 100%;
+          padding: var(--green-btn-padding);
+          h1{
+            font-family: var(--font-helvicta-bold);
+            font-size: var(--text-sm);
+          }
+        }
+        section{
+          padding: 5%;
+          background-color: var(--color-shade);
+          .section-01{
+            background-color:  var(--color-white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            .left-content{
+              padding: 2%;
+              display: flex;
+              width: 50%;
+              justify-content: space-between;
+             
+            }
+            .right-content{
+              display: flex;
+              width: 20%;
+              gap: 30px;
+              justify-content: end;
+              padding-right: 2%;
+            }
+          }
+          .section-02{
+            margin-top: 2%;
+            display: flex;
+            justify-content: space-between;
+            .left-box{
+              width: 48%;
+              padding: 2%;
+              background-color:  var(--color-white);
+              border-radius: 10px;
+              ul{
+                list-style: none;
+                li{
+                  display: flex;
+                  padding: 3% 0px;
+                  .recent-transactions{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 80%;
+                    padding-left: 2%;
+                    .rt-left{
+                      p{
+                        font-size: var(--text-sm);
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                        &:last-child{
+                          font-size: var(--text-sx);
+                          color: var( --color-grey);
+                        }
+                      }
+                    }
+                    .rt-right{
+                      p{
+                        font-size: var(--text-sm);
+                        font-weight: 700;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .right-box{
+              width: 48%;
+              padding: 2%;
+              background-color:  var(--color-white);
+              border-radius: 10px;
+              display: flex;
+              flex-direction: column;
+              .top-content{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 50px;
+                .read-btn{
+
+                }
+                .crypto-name{
+                  .grey-text{
+                    padding-bottom: 20px;
+                  }
+                }
+              }
+              .bottom-content{
+                padding: 30px;
+              }
+             
+            }
+          }
+          .section-03{
+            width: 48%;
+            padding-right: 2%;
+            background-color:  var(--color-white);
+            border-radius: 10px;
+            padding: 2%;
+            margin-top: 2%;
+            .green-btn{
+              width: fit-content;
+              margin-bottom: 5%;
+            }
+            p{
+              font-size: var(--text-sm);
+              font-family: var(--font-helvicta);
+            }
+          }
+        }
+      }
+    }
+  }
+  .db-footer{
+    // background-color: red;
+    // height: 10px;
+    // width: 100%;
+  }
+}
