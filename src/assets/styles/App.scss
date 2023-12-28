@@ -18,10 +18,34 @@
           padding-left: 60px;
           transition: 0.3s;
           border-radius: var(--green-btn-padding);
+          display: flex;
+          align-items: center;
           &:hover{
             background-color: var(--color-grey-1-hover);
             border-radius: var(--green-btn-padding);
             cursor: pointer;
+          }
+        }
+        h2.dashboard{
+          &::before{
+            content: '';
+            background-image: url('../images/Dashboard.png');
+            background-size: 20px;
+            width: 20px; 
+            height: 20px; 
+            display: inline-block; 
+            margin-right: 10px; 
+          }
+        }
+        h2.transaction{
+          &::before{
+            content: '';
+            background-image: url('../images/Transactions.png');
+            background-size: 20px;
+            width: 20px; 
+            height: 20px; 
+            display: inline-block; 
+            margin-right: 10px; 
           }
         }
 
@@ -142,10 +166,6 @@
             .green-btn{
               width: fit-content;
               margin-bottom: 5%;
-            }
-            p{
-              font-size: var(--text-sm);
-              font-family: var(--font-helvicta);
             }
           }
         }

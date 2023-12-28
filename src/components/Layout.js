@@ -7,8 +7,8 @@ const Layout = ({children}) => {
         <main className='db-main'>
             <aside className='db-nav-menu'>
                 <div className='nav-menu-item'>
-                    <h2>Dashboard</h2>
-                    <h2>Transaction</h2>
+                    <h2 className='dashboard'>Dashboard</h2>
+                    <h2 className='transaction'>Transaction</h2>
                 </div>
             </aside>
             <aside className='db-content'>
