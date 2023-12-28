@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../assets/styles/App.scss'
 import GreenBtn from '../components/GreenBtn'
+import {fetchData} from '../helper/data'
 const Transaction = () => {
+
+  const {All} = fetchData();
   const tabs = [
     {
       name: "All",
@@ -20,107 +23,6 @@ const Transaction = () => {
       count: 50,
     },
   ];
-  const tableData = [
-    {
-      id: "HD82NA2H",
-      date: "2023-06-20",
-      time: "07:00 AM",
-      type: {
-        name: "INR Deposit",
-        tag: "E-Transfer",
-      },
-      amount: "+₹81,123",
-      status: "pending",
-    },
-    {
-      id: "HD82NA4H",
-      date: "2023-06-18",
-      time: "07:00 AM",
-      type: {
-        name: "INR Widthdraw",
-        tag: "Wire Transfer",
-      },
-      amount: "-₹55,123",
-      status: "processing",
-    },
-    {
-      id: "HD82NA5H",
-      date: "2023-06-18",
-      time: "07:00 AM",
-      type: {
-        name: "Buy",
-        tag: "BTC",
-      },
-      amount: "12.0554484 BTC",
-      status: "cancelled",
-    },
-    {
-      id: "HD82NA6H",
-      date: "2023-06-18",
-      time: "07:00 AM",
-      type: {
-        name: "Sell",
-        tag: "BTC",
-      },
-      amount: "-2.0554484 BTC",
-      status: "completed",
-    },
-    {
-      id: "HD82NA7H",
-      date: "2023-06-20",
-      time: "07:00 AM",
-      type: {
-        name: "BTC ",
-        tag:"Deposit",
-      },
-      amount: "+15.5000000",
-      status: "pending",
-    },
-    {
-      id: "HD82NA8H",
-      date: "2023-06-18",
-      time: "07:00 AM",
-      type: {
-        name: "BTC ",
-        tag:"Widthdraw"
-      },
-      amount: "-5.05555544",
-      status: "completed",
-    },
-    {
-      id: "HD82NA8H",
-      date: "2023-06-18",
-      time: "07:00 AM",
-      type: {
-        name: "BTC ",
-        tag:"Widthdraw"
-      },
-      amount: "-5.05555544",
-      status: "completed",
-    },
-    {
-      id: "HD82NA8H",
-      date: "2023-06-18",
-      time: "07:00 AM",
-      type: {
-        name: "BTC ",
-        tag:"Widthdraw"
-      },
-      amount: "-5.05555544",
-      status: "completed",
-    },
-    {
-      id: "HD82NA8H",
-      date: "2023-06-18",
-      time: "07:00 AM",
-      type: {
-        name: "BTC ",
-        tag:"Widthdraw"
-      },
-      amount: "-5.05555544",
-      status: "completed",
-    },
-  ];
   const statusColor = {
     pending: "#797E82",
     processing: "#F5A50B",
@@ -128,6 +30,14 @@ const Transaction = () => {
     cancelled: "#DC2626",
   };
 
+  const [active,setActive] = useState("All");
+  const [data,setData] = useState(All);
+  const handleActiveTab = (val)=>{
+    setActive(val);
+    console.log(val);
+    setData(fetchData()[val]);
+  }
+  console.log(data);
   return (
     <div className='transaction-cmp'>
       <header className='header'>
@@ -140,13 +50,12 @@ const Transaction = () => {
         <section className='all-transactions'>
           <div className='at-header'>
             {tabs.map((tab, index) => (
-              <div key={tab.index} className={`${index === 0 ? 'active-tab ' : ''} at-tabs`}>
-                <p className=''>{tab.name}</p>
+              <div key={index} className={`${active === tab.name  ? 'active-tab ' : ''} at-tabs`}>
+                <p className='' onClick={() => handleActiveTab(tab.name)}>{tab.name}</p>
                 <p className='grey-btn'>{tab.count}</p>
               </div>
             ))}
           </div>
-
           <div className='at-search-box'>
             <input placeholder='Search' />
           </div>
@@ -163,29 +72,8 @@ const Transaction = () => {
                   <th>Status</th>
                 </tr>
               </thead>
-              {/* <tbody>
-                <tr>
-                  <td>HD82NA2H</td>
-                  <td>
-                    <div>
-                      <p>2023-06-20</p>
-                      <p>07:00 AM</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      <p>INR Deposit</p>
-                      <p>E-Transfer</p>
-                    </div>
-                  </td>
-                  <td>+₹81,123</td>
-                  <td>
-                    <span className='grey-btn'>pending</span>
-                  </td>
-                </tr>
-              </tbody> */}
               <tbody>
-              {tableData.map((transaction) => (
+              {data.map((transaction) => (
                 <tr key={transaction.id}>
                   <td>{transaction.id}</td>
                   <td>
