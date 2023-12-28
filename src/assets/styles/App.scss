@@ -13,10 +13,13 @@
       .nav-menu-item {
         margin-top: 30%;
         padding: var(--green-btn-padding);
-
+        a{
+          border-bottom: none;
+          color: black;
+          
+        }
         h2 {
           font-family: var(--font-helvicta-bold);
-          background-color: var(--color-grey-1);
           font-size: var(--text-sm);
           padding: var(--green-btn-padding);
           padding-left: 60px;
@@ -24,18 +27,36 @@
           border-radius: var(--green-btn-padding);
           display: flex;
           align-items: center;
-
+          background-color: var(--color-white);
           &:hover {
             background-color: var(--color-grey-1-hover);
             border-radius: var(--green-btn-padding);
             cursor: pointer;
           }
+          
+        }
+        .dashboard-active{
+          background-color: var(--color-grey-1);
+        }
+        .transaction-active{
+          background-color: var(--color-grey-1);
         }
 
-        h2.dashboard {
+        h2.dashboard-active {
           &::before {
             content: '';
             background-image: url('../images/Dashboard.png');
+            background-size: 20px;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+        h2.dashboard {
+          &::before {
+            content: '';
+            background-image: url('../images/grey-dashboard.png');
             background-size: 20px;
             width: 20px;
             height: 20px;
@@ -48,6 +69,17 @@
           &::before {
             content: '';
             background-image: url('../images/Transactions.png');
+            background-size: 20px;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+        h2.transaction-active {
+          &::before {
+            content: '';
+            background-image: url('../images/green-transaction.png');
             background-size: 20px;
             width: 20px;
             height: 20px;
