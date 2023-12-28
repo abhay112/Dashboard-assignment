@@ -57,7 +57,7 @@ const Transaction = () => {
     sortedData.sort((a, b) => new Date(b.date + ' ' + b.time) - new Date(a.date + ' ' + a.time));
   }
 
-  console.log(sort);
+  // console.log(sort);
   return (
     <div className='transaction-cmp'>
       <header className='header'>

@@ -24,7 +24,6 @@ const Contact = () => {
       ...prevData,
       [name]: type === 'checkbox' ? checked : value,
     }));
-    // Clear the error message when the user starts typing in a field
     setFormErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
   };
 
@@ -32,7 +31,6 @@ const Contact = () => {
     let valid = true;
     const errors = {};
 
-    // Check each field for validation
     if (formData.firstName.trim() === '') {
       errors.firstName = 'First Name is required';
       valid = false;
@@ -64,8 +62,7 @@ const Contact = () => {
 
   const handleSendMessage = () => {
     if (validateForm()) {
-      // Add logic here to send the message with the collected data
-      console.log('Sending message:', formData);
+      // console.log('Sending message:', formData);
       setFormData({
         firstName: '',
         lastName: '',
@@ -78,7 +75,7 @@ const Contact = () => {
 
   const handleBookMeeting = () => {
     if (validateForm()) {
-      console.log('Booking a meeting:', formData);
+      // console.log('Booking a meeting:', formData);
       setFormData({
         firstName: '',
         lastName: '',

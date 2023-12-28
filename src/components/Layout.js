@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   const [active, setActive] = useState('');
   const location = useLocation();
   useEffect(() => {
-    console.log(location.pathname);
+    // console.log(location.pathname);
     if (location.pathname === '/' || location.pathname === '/dashboard') {
       setActive('dashboard');
     } else if (location.pathname === '/transactions') {
