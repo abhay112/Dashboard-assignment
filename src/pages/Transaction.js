@@ -87,6 +87,39 @@ const Transaction = () => {
       amount: "-5.05555544",
       status: "completed",
     },
+    {
+      id: "HD82NA8H",
+      date: "2023-06-18",
+      time: "07:00 AM",
+      type: {
+        name: "BTC ",
+        tag:"Widthdraw"
+      },
+      amount: "-5.05555544",
+      status: "completed",
+    },
+    {
+      id: "HD82NA8H",
+      date: "2023-06-18",
+      time: "07:00 AM",
+      type: {
+        name: "BTC ",
+        tag:"Widthdraw"
+      },
+      amount: "-5.05555544",
+      status: "completed",
+    },
+    {
+      id: "HD82NA8H",
+      date: "2023-06-18",
+      time: "07:00 AM",
+      type: {
+        name: "BTC ",
+        tag:"Widthdraw"
+      },
+      amount: "-5.05555544",
+      status: "completed",
+    },
   ];
   const statusColor = {
     pending: "#797E82",

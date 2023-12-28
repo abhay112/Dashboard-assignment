@@ -11,8 +11,10 @@ const Layout = ({ children }) => {
       setActive('dashboard');
     } else if (location.pathname === '/transactions') {
       setActive('transaction');
-    } else {
-      setActive('');
+    } else if(location.pathname === '/contact'){
+      setActive('contact');
+    }else{
+      setActive('')
     }
   }, [location.pathname]);
 
@@ -21,12 +23,20 @@ const Layout = ({ children }) => {
       <main className='db-main'>
         <aside className='db-nav-menu'>
           <div className='nav-menu-item'>
-            <NavLink  to="/" >
-                <h2 className={active === 'dashboard' ? 'dashboard-active ' : 'dashboard'}>Dashboard</h2>
-            </NavLink>
-            <NavLink to='/transactions'>
-                <h2 className={active === 'transaction' ? 'transaction-active' : 'transaction'}>Transaction</h2>
-            </NavLink>
+            <div className='nav-top'>
+              <NavLink  to="/" >
+                  <h2 className={active === 'dashboard' ? 'dashboard-active ' : 'dashboard'}>Dashboard</h2>
+              </NavLink>
+              <NavLink to='/transactions'>
+                  <h2 className={active === 'transaction' ? 'transaction-active' : 'transaction'}>Transaction</h2>
+              </NavLink>
+            </div>
+            <div className='nav-bottom'>
+            <NavLink to='/contact'>
+                  <h2 className={active === 'contact' ? 'contact-active' : 'contact'}>Support</h2>
+              </NavLink>
+            </div>
+           
           </div>
         </aside>
         <aside className='db-content'>{children}</aside>

@@ -13,6 +13,17 @@
       .nav-menu-item {
         margin-top: 30%;
         padding: var(--green-btn-padding);
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        .nav-top{
+
+        }
+        .nav-bottom{
+          position: fixed;
+          bottom: 0;
+          width: 18%;
+        }
         a{
           border-bottom: none;
           color: black;
@@ -39,6 +50,9 @@
           background-color: var(--color-grey-1);
         }
         .transaction-active{
+          background-color: var(--color-grey-1);
+        }
+        .contact-active{
           background-color: var(--color-grey-1);
         }
 
@@ -87,6 +101,28 @@
             margin-right: 10px;
           }
         }
+        h2.contact {
+          &::before {
+            content: '';
+            background-image: url('../images/grey-support.png');
+            background-size: 20px;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
+        h2.contact-active {
+          &::before {
+            content: '';
+            background-image: url('../images/green-support.png');
+            background-size: 20px;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
 
       }
     }
@@ -95,6 +131,9 @@
       width: 80%;
       background-color: var(--color-white);
       .dashboard-cmp {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: calc(100vh);
         .header {
           background-color: var(--color-white);
           width: 100%;
@@ -229,6 +268,9 @@
         }
       }
       .transaction-cmp {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: calc(100vh);
         .header {
           background-color: var(--color-white);
           width: 100%;
@@ -366,6 +408,7 @@
                       &:last-child{
                         display: flex;
                         // justify-content: center;
+                        color: white;
                       }
                     }
                   }
@@ -373,6 +416,28 @@
               }
             }
           }
+        }
+      }
+      .contact-cmp{
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: calc(100vh);
+        .header {
+          background-color: var(--color-white);
+          width: 100%;
+          padding: var(--green-btn-padding);
+
+          h1 {
+            font-family: var(--font-helvicta-bold);
+            font-size: var(--text-sm);
+          }
+        }
+        main{
+          padding: 5%;
+          background-color: var(--color-shade);
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
         }
       }
     }
