@@ -29,22 +29,34 @@ const Transaction = () => {
     completed: "#059669",
     cancelled: "#DC2626",
   };
-
   const [active,setActive] = useState("All");
   const [data,setData] = useState(All);
   const [sort,setSort] = useState(true);
-
+  const [searchTerm, setSearchTerm] = useState('');
   const handleActiveTab = (val)=>{
     setActive(val);
     setData(fetchData()[val]);
     setSort(true);
   }
-  const sortedData = [...data];
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+  const filteredData = data.filter((transaction) => {
+    const searchTermLowerCase = searchTerm.toLowerCase();
+    return (
+      transaction.id.toLowerCase().includes(searchTermLowerCase) ||
+      transaction.type.name.toLowerCase().includes(searchTermLowerCase) ||
+      transaction.date.includes(searchTermLowerCase) ||
+      transaction.time.includes(searchTermLowerCase)
+    );
+  });
+  const sortedData = [...filteredData];
   if (sort) {
     sortedData.sort((a, b) => new Date(a.date + ' ' + a.time) - new Date(b.date + ' ' + b.time));
   } else {
     sortedData.sort((a, b) => new Date(b.date + ' ' + b.time) - new Date(a.date + ' ' + a.time));
   }
+
   console.log(sort);
   return (
     <div className='transaction-cmp'>
@@ -65,7 +77,10 @@ const Transaction = () => {
             ))}
           </div>
           <div className='at-search-box'>
-            <input placeholder='Search' />
+            <input placeholder='Search' 
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
           </div>
         </section>
         <section className='transaction-details'>
