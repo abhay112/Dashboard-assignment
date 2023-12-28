@@ -200,10 +200,10 @@
 
                     .rt-left {
                       p {
-                        font-size: var(--text-sm);
+                        font-size: var(--text-sx);
                         font-weight: 700;
                         margin-bottom: 10px;
-
+                        margin-top: 10px;
                         &:last-child {
                           font-size: var(--text-sx);
                           color: var(--color-grey);
@@ -229,12 +229,12 @@
               border-radius: 10px;
               display: flex;
               flex-direction: column;
-
+              height: fit-content;
               .top-content {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
-                margin-bottom: 50px;
+                margin-bottom: 30px;
 
                 .read-btn {}
 
@@ -321,6 +321,11 @@
                 cursor: pointer;
                 align-items: center;
                 gap: 10px;
+                p{
+                  font-size: var(--text-sx);
+                  font-family: var(--font-helvicta);
+
+                }
               }
 
               .active-tab {

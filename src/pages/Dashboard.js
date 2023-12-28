@@ -1,10 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../assets/styles/App.scss'
 import TextPriceBtn from '../components/TextPriceBtn';
 import GreenBtn from '../components/GreenBtn';
 import btn from '../assets/images/Dollar.png'
+import {fetchData} from '../helper/data'
 
 const Dashboard = () => {
+  const {All} = fetchData();
+  const [displayedItems, setDisplayedItems] = useState(3);
+  const handleViewAll = () => {
+    setDisplayedItems((prevItems) => (prevItems === All.length ? 3 : All.length));
+  };
   return (
     <div className='dashboard-cmp'>
       <header className='header'>
@@ -27,52 +33,26 @@ const Dashboard = () => {
           <div className='left-box'>
             <h2 className='grey-text'>Recent Transactions</h2>
             <ul>
-              <li>
+            {All.slice(0, displayedItems).map((val, idx) => (
+                <li key={idx}>
                 <div className='btn-img'>
                   <img src={btn} />
                 </div>
                 <div className='recent-transactions'>
                   <div className='rt-left'>
-                    <p>INR Deposit</p>
-                    <p>2022-06-09 7:06 PM</p>
+                    <p>{val?.type?.name}</p>
+                    <p>{val.date}{val?.time} </p>
                   </div>
                   <div className='rt-right'>
-                    <p>+ ₹81,123.10</p>
+                    <p>{val?.amount}</p>
                   </div>
                 </div>
-              </li>
-              <li>
-                <div className='btn-img'>
-                  <img src={btn} />
-
-                </div>
-                <div className='recent-transactions'>
-                  <div className='rt-left'>
-                    <p>BTC Sell</p>
-                    <p>2022-06-09 7:06 PM</p>
-                  </div>
-                  <div className='rt-right'>
-                    <p>- ₹81,123.10 BTC</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className='btn-img'>
-                  <img src={btn} />
-
-                </div>
-                <div className='recent-transactions'>
-                  <div className='rt-left'>
-                    <p>INR Deposit</p>
-                    <p>2022-06-09 7:06 PM</p>
-                  </div>
-                  <div className='rt-right'>
-                    <p>+ ₹81,123.10</p>
-                  </div>
-                </div>
-              </li>
+                </li>
+              ))}
             </ul>
-            <GreenBtn text={'View All'} />
+            {All.length > 3 && (
+              <GreenBtn text={displayedItems === All.length ? 'View Less' : 'View All'} onClick={handleViewAll} />
+            )}
           </div>
           <div className='right-box'>
             <div className='top-content'>
@@ -86,6 +66,7 @@ const Dashboard = () => {
             </div>
             <div className='bottom-content'>
               <p className='grey-text'>
+              DogeCoin takes its name and logo from the popular "Doge" internet meme featuring a Shiba Inu dog. Despite its playful origins, DogeCoin has gained a notable following in the cryptocurrency space. It operates on a decentralized peer-to-peer network and utilizes a Scrypt algorithm for mining.<br/>
               DogeCoin takes its name and logo from the popular "Doge" internet meme featuring a Shiba Inu dog. Despite its playful origins, DogeCoin has gained a notable following in the cryptocurrency space. It operates on a decentralized peer-to-peer network and utilizes a Scrypt algorithm for mining.
               </p>
             </div>
