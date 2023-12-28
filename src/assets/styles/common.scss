@@ -133,6 +133,7 @@ body {
 
 @media screen and (max-width: 1800px) {
   :root {
+    --text-lg: 34px;
     --text-sm: 20px;
     --text-sx: 16px;
     --text-mini: 15px;
@@ -142,6 +143,7 @@ body {
 
 @media screen and (max-width: 1600px) {
   :root {
+    --text-lg: 30px;
     --text-sm: 16px;
     --text-sx: 14px;
     --text-mini: 14px;
@@ -155,6 +157,7 @@ body {
 
 @media screen and (max-width: 1440px) {
   :root {
+    --text-lg: 28px;
     --text-sm: 12px;
     --text-sx: 10px;
     --text-mini: 12px;
@@ -163,6 +166,7 @@ body {
 }
 @media screen and (max-width: 1200px) {
   :root {
+    --text-lg: 20px;
     --text-sm: 12px;
     --text-sx: 10px;
     --text-mini: 10px;
