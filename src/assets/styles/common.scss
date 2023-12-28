@@ -92,7 +92,15 @@ body {
   &:hover{
     background-color: var(--color-grey-1-hover);
   }
-
+}
+.yellow-btn{
+  background-color: #F5A50B;
+}
+.red-btn{
+  background-color: #DC2626;
+}
+.greeen-btn{
+  background-color: #059669;
 }
 .grey-text{
   color: var(--color-grey);
@@ -124,6 +132,7 @@ body {
   :root {
     --text-sm: 20px;
     --text-sx: 16px;
+    --text-mini: 15px;
     --green-btn-padding:15px;
   }
 }
@@ -132,6 +141,7 @@ body {
   :root {
     --text-sm: 16px;
     --text-sx: 14px;
+    --text-mini: 14px;
     --green-btn-padding:12px;
   }
   .grey-btn{
@@ -144,6 +154,7 @@ body {
   :root {
     --text-sm: 12px;
     --text-sx: 10px;
+    --text-mini: 12px;
     --green-btn-padding:10px 15px;
   }
 }
@@ -151,6 +162,7 @@ body {
   :root {
     --text-sm: 12px;
     --text-sx: 10px;
+    --text-mini: 10px;
     --green-btn-padding:12px;
   }
 }

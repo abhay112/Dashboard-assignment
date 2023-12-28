@@ -26,7 +26,6 @@ const Dashboard = () => {
         <div className='section-02'>
           <div className='left-box'>
             <h2 className='grey-text'>Recent Transactions</h2>
-
             <ul>
               <li>
                 <div className='btn-img'>
