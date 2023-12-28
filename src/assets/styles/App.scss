@@ -376,6 +376,36 @@
                       width: 100%;
                       font-size: var(--text-mini);
                       color: var(--color-grey);
+                      &:nth-child(2){
+                        &::after{
+                          content: '';
+                            background-image: url('../images/descSort.png');
+                            background-size: 15px;
+                            width: 15px;
+                            height: 15px;
+                            cursor: pointer;
+                        }
+                      }
+                    }
+                    th.asc{
+                      &::after{
+                          content: '';
+                          background-image: url('../images/descSort.png');
+                          background-size: 15px;
+                          width: 15px;
+                          height: 15px;
+                          cursor: pointer;
+                      }
+                    }
+                    th.desc{
+                      &::after{
+                          content: '';
+                          background-image: url('../images/AscSort.png');
+                          background-size: 15px;
+                          width: 15px;
+                          height: 12px;
+                          cursor: pointer;
+                      }
                     }
                   }
                 }

@@ -79,8 +79,31 @@ export const fetchData = val =>{
           amount: "+₹81,123",
           status: "pending",
         },
+        {
+          id: "HD82NA6H",
+          date: "2023-06-18",
+          time: "07:00 AM",
+          type: {
+            name: "Sell",
+            tag: "BTC",
+          },
+          amount: "-2.0554484 BTC",
+          status: "completed",
+        },
+        {
+          id: "HD82NA7H",
+          date: "2023-06-20",
+          time: "07:00 AM",
+          type: {
+            name: "BTC ",
+            tag:"Deposit",
+          },
+          amount: "+15.5000000",
+          status: "pending",
+        },
       ];
       const Widthdraw = [
+
         {
           id: "HD82NA2H",
           date: "2023-06-20",
@@ -92,8 +115,31 @@ export const fetchData = val =>{
           amount: "+₹8199,123",
           status: "pending",
         },
+        {
+          id: "HD82NA4H",
+          date: "2023-06-18",
+          time: "07:00 AM",
+          type: {
+            name: "INR Widthdraw",
+            tag: "Wire Transfer",
+          },
+          amount: "-₹55,123",
+          status: "processing",
+        },
+        {
+          id: "HD82NA5H",
+          date: "2023-06-18",
+          time: "07:00 AM",
+          type: {
+            name: "Buy",
+            tag: "BTC",
+          },
+          amount: "12.0554484 BTC",
+          status: "cancelled",
+        },
       ];  
       const Trade = [
+        
         {
           id: "HD82NA2H",
           date: "2023-06-20",
@@ -104,6 +150,17 @@ export const fetchData = val =>{
           },
           amount: "+₹8199,123",
           status: "pending",
+        },
+        {
+          id: "HD82NA21H",
+          date: "2023-08-20",
+          time: "07:00 AM",
+          type: {
+            name: "INR Trade",
+            tag: "E-Transfer",
+          },
+          amount: "+₹8199,123",
+          status: "cancelled",
         },
       ];    
       return {All,Deposit,Widthdraw,Trade};

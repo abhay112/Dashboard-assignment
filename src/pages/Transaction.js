@@ -32,12 +32,20 @@ const Transaction = () => {
 
   const [active,setActive] = useState("All");
   const [data,setData] = useState(All);
+  const [sort,setSort] = useState(true);
+
   const handleActiveTab = (val)=>{
     setActive(val);
-    console.log(val);
     setData(fetchData()[val]);
+    setSort(true);
   }
-  console.log(data);
+  const sortedData = [...data];
+  if (sort) {
+    sortedData.sort((a, b) => new Date(a.date + ' ' + a.time) - new Date(b.date + ' ' + b.time));
+  } else {
+    sortedData.sort((a, b) => new Date(b.date + ' ' + b.time) - new Date(a.date + ' ' + a.time));
+  }
+  console.log(sort);
   return (
     <div className='transaction-cmp'>
       <header className='header'>
@@ -66,14 +74,14 @@ const Transaction = () => {
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Date & Time</th>
+                  <th onClick={()=>setSort(!sort)} className={`${sort?"asc":"desc"}`}>Date & Time</th>
                   <th>Type</th>
                   <th>Amount</th>
                   <th>Status</th>
                 </tr>
               </thead>
               <tbody>
-              {data.map((transaction) => (
+              {sortedData.map((transaction) => (
                 <tr key={transaction.id}>
                   <td>{transaction.id}</td>
                   <td>
