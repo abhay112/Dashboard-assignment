@@ -9,7 +9,7 @@ export const fetchData = val =>{
             tag: "E-Transfer",
           },
           amount: "+₹81,123",
-          status: "pending",
+          status: "Pending",
         },
         {
           id: "HD82NA4H",
@@ -20,7 +20,7 @@ export const fetchData = val =>{
             tag: "Wire Transfer",
           },
           amount: "-₹55,123",
-          status: "processing",
+          status: "Processing",
         },
         {
           id: "HD82NA5H",
@@ -31,7 +31,7 @@ export const fetchData = val =>{
             tag: "BTC",
           },
           amount: "12.0554484 BTC",
-          status: "cancelled",
+          status: "Cancelled",
         },
         {
           id: "HD82NA6H",
@@ -42,7 +42,7 @@ export const fetchData = val =>{
             tag: "BTC",
           },
           amount: "-2.0554484 BTC",
-          status: "completed",
+          status: "Completed",
         },
         {
           id: "HD82NA7H",
@@ -53,7 +53,7 @@ export const fetchData = val =>{
             tag:"Deposit",
           },
           amount: "+15.5000000",
-          status: "pending",
+          status: "Pending",
         },
         {
           id: "HD82NA8H",
@@ -64,7 +64,7 @@ export const fetchData = val =>{
             tag:"Widthdraw"
           },
           amount: "-5.05555544",
-          status: "completed",
+          status: "Completed",
         },
       ];
       const Deposit = [
@@ -77,7 +77,7 @@ export const fetchData = val =>{
             tag: "E-Transfer",
           },
           amount: "+₹81,123",
-          status: "pending",
+          status: "Pending",
         },
         {
           id: "HD82NA6H",
@@ -88,7 +88,7 @@ export const fetchData = val =>{
             tag: "BTC",
           },
           amount: "-2.0554484 BTC",
-          status: "completed",
+          status: "Completed",
         },
         {
           id: "HD82NA7H",
@@ -99,7 +99,7 @@ export const fetchData = val =>{
             tag:"Deposit",
           },
           amount: "+15.5000000",
-          status: "pending",
+          status: "Pending",
         },
       ];
       const Widthdraw = [
@@ -113,7 +113,7 @@ export const fetchData = val =>{
             tag: "E-Transfer",
           },
           amount: "+₹8199,123",
-          status: "pending",
+          status: "Pending",
         },
         {
           id: "HD82NA4H",
@@ -124,7 +124,7 @@ export const fetchData = val =>{
             tag: "Wire Transfer",
           },
           amount: "-₹55,123",
-          status: "processing",
+          status: "Processing",
         },
         {
           id: "HD82NA5H",
@@ -135,7 +135,7 @@ export const fetchData = val =>{
             tag: "BTC",
           },
           amount: "12.0554484 BTC",
-          status: "cancelled",
+          status: "Cancelled",
         },
       ];  
       const Trade = [
@@ -149,7 +149,7 @@ export const fetchData = val =>{
             tag: "E-Transfer",
           },
           amount: "+₹8199,123",
-          status: "pending",
+          status: "Pending",
         },
         {
           id: "HD82NA21H",
@@ -160,8 +160,32 @@ export const fetchData = val =>{
             tag: "E-Transfer",
           },
           amount: "+₹8199,123",
-          status: "cancelled",
+          status: "Cancelled",
         },
       ];    
-      return {All,Deposit,Widthdraw,Trade};
+      const tabs = [
+        {
+          name: "All",
+          count: 349,
+        },
+        {
+          name: "Deposit",
+          count: 114,
+        },
+        {
+          name: "Widthdraw",
+          count: 55,
+        },
+        {
+          name: "Trade",
+          count: 50,
+        },
+      ];
+      const statusColor = {
+        Pending: "#797E82",
+        Processing: "#F5A50B",
+        Completed: "#059669",
+        Cancelled: "#DC2626",
+      };
+      return {All,Deposit,Widthdraw,Trade,tabs,statusColor};
 }

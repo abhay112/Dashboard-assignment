@@ -4,31 +4,8 @@ import GreenBtn from '../components/GreenBtn'
 import {fetchData} from '../helper/data'
 const Transaction = () => {
 
-  const {All} = fetchData();
-  const tabs = [
-    {
-      name: "All",
-      count: 349,
-    },
-    {
-      name: "Deposit",
-      count: 114,
-    },
-    {
-      name: "Widthdraw",
-      count: 55,
-    },
-    {
-      name: "Trade",
-      count: 50,
-    },
-  ];
-  const statusColor = {
-    pending: "#797E82",
-    processing: "#F5A50B",
-    completed: "#059669",
-    cancelled: "#DC2626",
-  };
+  const {All,tabs,statusColor} = fetchData();
+
   const [active,setActive] = useState("All");
   const [data,setData] = useState(All);
   const [sort,setSort] = useState(true);
@@ -47,7 +24,8 @@ const Transaction = () => {
       transaction.id.toLowerCase().includes(searchTermLowerCase) ||
       transaction.type.name.toLowerCase().includes(searchTermLowerCase) ||
       transaction.date.includes(searchTermLowerCase) ||
-      transaction.time.includes(searchTermLowerCase)
+      transaction.time.includes(searchTermLowerCase) ||
+      transaction.status.toLowerCase().includes(searchTermLowerCase)
     );
   });
   const sortedData = [...filteredData];

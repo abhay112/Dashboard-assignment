@@ -28,12 +28,12 @@
   --color-black-1: #1f2124;
   --color-grey: #535D66;
   --color-grey-1: #F3F3F7;
-  --color-grey-1-hover:#e1e1e3;
-  --color-green-hover:#1d9730;
+  --color-grey-1-hover: #e1e1e3;
+  --color-green-hover: #1d9730;
   --color-green: #13F136;
   --color-shade: #f5f6f6;
 
-  --green-btn-padding:20px;
+  --green-btn-padding: 20px;
 }
 
 // ******** ---- Globle CSS ---- ********
@@ -42,80 +42,100 @@
   padding: 0;
   box-sizing: border-box;
 }
-a,ul{
+
+a,
+ul {
   text-decoration: none;
 }
+
 img {
   width: 100%;
   height: 100%;
 }
+
 body {
   font-weight: normal !important;
   background-image: none !important;
   font-family: var(--font-helvicta) !important;
   color: var(--color-black);
 }
-.green-btn{
-    padding: var(--green-btn-padding);
-    background-color: var(--color-green);
-    border-radius: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all .3 ease-in;
 
-    img{
-      margin-right: 10px;
-    }
-    p{
-      font-family: var(--font-helvicta);
-      font-size: var(--text-sx);
-    }
-    &:hover{
-      background-color: var(--color-green-hover);
-    }
+.mobile-reponsive {
+  display: none;
 }
-.text-price-btn{
-  p{
+
+.green-btn {
+  padding: var(--green-btn-padding);
+  background-color: var(--color-green);
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3 ease-in;
+
+  img {
+    margin-right: 10px;
+  }
+
+  p {
+    font-family: var(--font-helvicta);
+    font-size: var(--text-sx);
+  }
+
+  &:hover {
+    background-color: var(--color-green-hover);
+  }
+}
+
+.text-price-btn {
+  p {
     padding-bottom: 10px;
     font-family: var(--font-helvicta-light) !important;
     color: var(--color-grey);
     font-weight: 600;
   }
 }
-.grey-btn{
+
+.grey-btn {
   background-color: var(--color-grey-1);
   border-radius: 20px;
   padding: 10px 20px;
   font-size: var(--text-sx);
   cursor: pointer;
   transform: all 0.3 ease-in;
-  &:hover{
+
+  &:hover {
     background-color: var(--color-grey-1-hover);
   }
 }
-.yellow-btn{
+
+.yellow-btn {
   background-color: #F5A50B;
 }
-.red-btn{
+
+.red-btn {
   background-color: #DC2626;
 }
-.greeen-btn{
+
+.greeen-btn {
   background-color: #059669;
 }
-.grey-text{
+
+.grey-text {
   color: var(--color-grey);
   font-family: var(--font-helvicta-light);
   font-size: var(--text-sx);
 }
-.black-text{
+
+.black-text {
   color: var(--color-black) !important;
   font-family: var(--font-helvicta);
   font-size: var(--text-sm);
 }
-.btn-img{
+
+.btn-img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -124,10 +144,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  img{
+
+  img {
     width: 35%;
     height: 35%;
-    
+
   }
 }
 
@@ -137,12 +158,14 @@ body {
     --text-sm: 20px;
     --text-sx: 16px;
     --text-mini: 15px;
-    --green-btn-padding:15px;
+    --green-btn-padding: 15px;
   }
-  .btn-img{
+
+  .btn-img {
     width: 60px;
     height: 60px;
-    img{
+
+    img {
       width: 30%;
       height: 30%;
     }
@@ -155,9 +178,10 @@ body {
     --text-sm: 16px;
     --text-sx: 14px;
     --text-mini: 14px;
-    --green-btn-padding:12px;
+    --green-btn-padding: 12px;
   }
-  .grey-btn{
+
+  .grey-btn {
     padding: 5px 15px;
     border-radius: 10px;
   }
@@ -169,30 +193,48 @@ body {
     --text-sm: 12px;
     --text-sx: 10px;
     --text-mini: 12px;
-    --green-btn-padding:10px 15px;
+    --green-btn-padding: 10px 15px;
   }
-  .btn-img{
+
+  .btn-img {
     width: 50px;
     height: 50px;
-    img{
+
+    img {
       width: 30%;
       height: 30%;
     }
   }
 }
+
 @media screen and (max-width: 1200px) {
   :root {
     --text-lg: 20px;
     --text-sm: 12px;
     --text-sx: 10px;
     --text-mini: 10px;
-    --green-btn-padding:12px;
+    --green-btn-padding: 12px;
   }
 }
 
+@media screen and (max-width: 600px) {
+  .mobile-reponsive {
+    display: block;
+  }
 
+  .btn-img {
+    width: 30px;
+    height: 30px;
 
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
 
-
-
-
+  .green-btn {
+    padding: 10px 12px;
+    img{
+    }
+  }
+}

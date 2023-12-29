@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/styles/App.scss';
 import { NavLink,useLocation } from 'react-router-dom';
+import navIcon from '../assets/images/hamburger.png'
 
 const Layout = ({ children }) => {
   const [active, setActive] = useState('');
@@ -18,10 +19,15 @@ const Layout = ({ children }) => {
     }
   }, [location.pathname]);
 
+  const [clicked,setClicked] = useState(false);
+
   return (
     <div className='dashboard-layout'>
       <main className='db-main'>
-        <aside className='db-nav-menu'>
+        <aside className={`db-nav-menu ${clicked?"nav-icon-clicked":""}`}>
+          <div className={`mobile-reponsive nav-icon `}>
+            <img src={navIcon} alt="navicon"  onClick={()=>{setClicked(!clicked)}}/>
+          </div>
           <div className='nav-menu-item'>
             <div className='nav-top'>
               <NavLink  to="/" >
@@ -39,7 +45,11 @@ const Layout = ({ children }) => {
            
           </div>
         </aside>
-        <aside className='db-content'>{children}</aside>
+        <aside>
+        </aside>
+        <aside className={`db-content ${clicked?"db-content-width":""}`}>
+          {children}
+        </aside>
       </main>
       <footer className='db-footer'></footer>
     </div>
